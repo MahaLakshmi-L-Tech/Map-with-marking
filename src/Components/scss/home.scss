@@ -1,0 +1,54 @@
+.homePageConatiner {
+  padding: 2px;
+  .homePage {
+    margin-top: 10px;
+    // margin-bottom: -10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+
+  #map {
+    position: absolute;
+    top: 10px;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .flyerContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px !important;
+    margin: 0px auto;
+    padding-left: 500px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .sidebar {
+    position: absolute;
+    margin: 20px 20px 30px 20px;
+    width: 25%;
+    height: 25%;
+    top: 250px;
+    bottom: 0;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  .ant-anchor {
+    color: white !important;
+    display: flex !important;
+    .loginInfosvg {
+      margin-top: 5px;
+    }
+    .loginInfo {
+      color: white !important;
+      font-size: 16px !important;
+    }
+  }
+}

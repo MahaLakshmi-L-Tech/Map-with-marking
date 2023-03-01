@@ -1,0 +1,27 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  width: 100%;
+  padding-bottom: 300px;
+  background-color: aqua;
+  background-image: url("../image/background.jpg");
+
+  .InputContainer {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid fuchsia;
+    padding: 50px;
+    border-radius: 9px;
+    margin-top: 100px;
+  }
+  .usernameInput,
+  .passwordInput {
+    width: 300px;
+    margin: 10px;
+    font-size: 20px;
+  }
+}
