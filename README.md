@@ -4,14 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About the Project
 
-This is a map interface Project.In this platform User can login and view the region information in the map.
-Using this platform user can Zoom in and Zoom out the map to his desire.
+This is a map interface Project. In this platform User can login and view the regions information like total area , total population, currency , timezone and other detials.
+Using this platform user can Zoom in and Zoom out the map as they need and see entire globe.
 
 ## Technologies Used:
 
-ReactJS,Redux,HTML,SCSS,JavaScript,JSON,Ant Design 5.0 .
+ReactJS, Redux, HTML, SCSS, JavaScript, JSON, Ant Design 5.0 , mapbox.
 
-In the project directory, you can run:
+## IMPORTANT
+
+Information about the Map obtained by mapbox.
 
 ## Available Scripts
 
@@ -30,24 +32,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Discription
 
-1.Home Page
+1. Home Page
 
 This is default Page [Home.js].This page is accessible by user.
 User can login and access the features like view the region information in the map,Zoom in and Zoom out the map.
 
-2.LogIn page
+2. Login page
 
 After clicking on “Login” from Home page,user is asked for username and password. Once these details will be given and clicked on login button. The given details will be validated using 'https://dummyjson.com/users' (API) .if the details given by user are valid then user will be redirected to homepage .
 
 In Home page user can see his information like name,emailId .
 User can choose any one region(United States, India, United Kingdom) at a time from 'Form Input'.Then map will load and show the country in the map area and card shows the currency symbol, units of speed, distance and volume (kmph, kilometers, liters etc), timezone(s) information of the loaded region.
 
-\*\*IMPORTANT
-Information about the Map obtained by mapbox.
+## Sample Login Details
 
-## Test
-
-Some of the dummy API information given below:
+Some of the sample login details to use:
 
 1. "username": "atuny0",
    "password": "9uQFF1Lh"
