@@ -39,10 +39,11 @@ User can login and access the features like view the region information in the m
 
 2. Login page
 
-After clicking on “Login” from Home page,user is asked for username and password. Once these details will be given and clicked on login button. The given details will be validated using 'https://dummyjson.com/users' (API) .if the details given by user are valid then user will be redirected to homepage .
+After clicking on “Login” from Home page, user is asked for username and password. Once these details will be given and clicked on login button. The given details will be validated using 'https://dummyjson.com/users' (API) .if the details given by user are valid then user will be redirected to homepage.
 
-In Home page user can see his information like name,emailId .
-User can choose any one region(United States, India, United Kingdom) at a time from 'Form Input'.Then map will load and show the country in the map area and card shows the currency symbol, units of speed, distance and volume (kmph, kilometers, liters etc), timezone(s) information of the loaded region.
+In Home page user can see his information like name, emailId.
+
+User can choose any one region(United States, India, United Kingdom) .Then map will load and show the country in the map area and card shows the currency symbol, distance , Currency, population , timezone and other required information of the loaded region.
 
 ## Sample Login Details
 
@@ -58,4 +59,3 @@ Some of the sample login details to use:
    "password": "sRQxjPfdS"
 5. "username": "kmeus4",
    "password": "aUTdmmmbH"
-   so, that this project can be tested.
