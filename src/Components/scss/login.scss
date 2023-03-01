@@ -6,6 +6,7 @@
   justify-items: center;
 
   width: 100%;
+  height: 67vh;
   padding-bottom: 300px;
   background-color: aqua;
   background-image: url("../image/background.jpg");
@@ -13,15 +14,22 @@
   .InputContainer {
     display: flex;
     flex-direction: column;
-    border: 3px solid fuchsia;
+
     padding: 50px;
+    margin-right: 90px;
     border-radius: 9px;
     margin-top: 100px;
   }
   .usernameInput,
   .passwordInput {
     width: 300px;
-    margin: 10px;
+    margin: 20px;
     font-size: 20px;
+  }
+
+  .loginButton {
+    width: 200px;
+    margin-left: 60px;
+    margin-top: 10px;
   }
 }
