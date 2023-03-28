@@ -1,7 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import DisplayCards from "./DisplayCards";
+import UserInfo from "./UserInfo";
 import mapboxgl from "mapbox-gl";
-
+import CountrySearch from "./CountrySearch";
+import "./scss/home.scss";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import { selectRegionInfo } from "../Selectors/RegionInfoSelector";
 
 let map;
 
@@ -10,69 +15,59 @@ mapboxgl.accessToken =
 
 const Home = () => {
   const mapContainer = useRef(null);
+  const [lng, setLng] = useState(76.89);
+  const [lat, setLat] = useState(23.45);
+  const [zoom, setZoom] = useState(9);
+  const regionInfo = useSelector(selectRegionInfo);
 
   useEffect(() => {
     map = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/streets-v12",
-      center: [75.7139, 12.3173],
+      center: [77.0, 20.0],
       minZoom: 2,
-      zoom: 7,
+      zoom: 3,
       type: "Map",
+      interactive: false,
     });
 
     map.addControl(
       new mapboxgl.NavigationControl({ showCompass: false }),
       "top-left"
     );
-    map.on("load", () => {
-      map.addSource("karnataka", {
-        type: "geojson",
-        data: {
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              geometry: {
-                type: "Point",
-                coordinates: [77.5946, 12.9716],
-              },
-            },
-            {
-              type: "Feature",
-              geometry: {
-                type: "Point",
-                coordinates: [76.6394, 12.2958],
-              },
-            },
-            {
-              type: "Feature",
-              geometry: {
-                type: "Point",
-                coordinates: [74.856, 12.9141],
-              },
-            },
-          ],
-        },
+  });
+
+  useEffect(() => {
+    if (regionInfo.length) {
+      const location = regionInfo[0].capitalInfo.latlng;
+      const popup = new mapboxgl.Popup().setHTML(
+        `<h4> Welcome to ${regionInfo[0].name.common}</h4>`
+      );
+      const center = [location[1], location[0]];
+      map.flyTo({
+        center,
       });
 
-      map.addLayer({
-        id: "park-volcanoes",
-        type: "circle",
-        source: "karnataka",
-        paint: {
-          "circle-radius": 40,
-          "circle-color": "#B42222",
-          "circle-opacity": 0.35,
-        },
-        filter: ["==", "$type", "Point"],
-      });
-    });
-  });
+      const el = document.createElement("div");
+      el.id = "marker";
+      const marker = new mapboxgl.Marker({ color: "red" })
+        .setLngLat([location[1], location[0]])
+        .setPopup(popup)
+        .addTo(map);
+      marker.togglePopup();
+    }
+  }, [regionInfo]);
 
   return (
     <>
-      <div ref={mapContainer} className="map-container" id="map" />
+      <div className="homePageConatiner">
+        <div ref={mapContainer} className="map-container" id="map" />
+        <div className="flyerContainer">
+          <CountrySearch />
+          <UserInfo className="loginInfo" />
+        </div>
+        {regionInfo.length && <DisplayCards regionInfo={regionInfo} />}
+      </div>
     </>
   );
 };

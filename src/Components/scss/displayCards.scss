@@ -1,0 +1,27 @@
+.regionCard {
+  width: 320px;
+  margin-top: 50px;
+  margin-left: 20px;
+  overflow-wrap: break-word;
+
+  .ant-card-body {
+    padding-bottom: 10px !important;
+  }
+
+  .regionarea,
+  .regionContinent,
+  .regionpopulation {
+    color: black !important;
+    font-size: 20px !important;
+  }
+
+  .regionCurrency {
+    color: black !important;
+    font-size: 18px !important;
+  }
+  .coatArmimages {
+    width: 20vh;
+    height: 20vh;
+    margin-top: 5px;
+  }
+}
