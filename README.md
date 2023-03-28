@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About the Project
 
-This is a map interface Project. In this application use acan see the map and some of the area are marked inside circle.
-User can login and access the features like view the region information in the map,Zoom in and Zoom out the map.
+This is a map interface Project. In this application user can see the map and some of the area are marked inside circle.
+User can Zoom in and Zoom out the map and can see the entair globe.
 
 ## Technologies Used:
 
@@ -35,7 +35,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 1. Home Page
 
 This is default Page [Home.js].This page is some of the area are marked inside circle.
-User can login and access the features like view the region information in the map,Zoom in and Zoom out the map.
+In this application user can see the map and some of the area are marked inside circle.
+User can Zoom in and Zoom out the map and can see the entair globe.
 
 ### Screenshots
 
